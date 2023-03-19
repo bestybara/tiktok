@@ -1,3 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --doc-height: 100%;
+  --font-inter: "Inter", sans-serif;
+  --font-noto: "Noto Sans Thai", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-inter);
+    -moz-osx-font-smoothing: grayscale;
+    /*(For Firefox) */
+    -webkit-font-smoothing: antialiased;
+    /*(For Chrome and Safari)*/
+    color: #ffffff;
+    overflow: hidden;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    /* fallback for Js load */
+    height: var(--doc-height);
+  }
+}
+
+/* AnimationButton */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 0.1s;
+}
